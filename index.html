@@ -2,16 +2,58 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platformer 2D Ultimate</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="stats">
-        <div id="title">PLATFORMER 2D ULTIMATE</div>
-        PIÈCES: <span id="score">0</span>
+
+    <div id="auth-screen" class="overlay">
+        <div class="modal">
+            <div id="lang-switch">
+                <button onclick="setLang('fr')">FR</button>
+                <button onclick="setLang('en')">EN</button>
+            </div>
+            <h1 id="t-title">PLATFORMER 2D ULTIMATE</h1>
+            <div id="login-panel">
+                <input type="text" id="user-input" placeholder="Pseudo">
+                <input type="password" id="pass-input" placeholder="Password">
+                <button onclick="login()" id="t-login-btn">Connexion</button>
+                <p onclick="toggleAuth()" id="t-no-account" class="link">Créer un compte</p>
+            </div>
+            <div id="register-panel" style="display:none">
+                <input type="text" placeholder="Pseudo">
+                <input type="password" placeholder="Password">
+                <button onclick="register()" id="t-reg-btn">S'inscrire</button>
+                <p onclick="toggleAuth()" id="t-have-account" class="link">Déjà inscrit ?</p>
+            </div>
+        </div>
     </div>
-    <canvas id="game"></canvas>
+
+    <div id="game-ui" style="display:none">
+        <div id="stats"><span id="t-score-label">SCORE</span>: <span id="score">0</span></div>
+        
+        <div id="chat-box">
+            <div id="messages"></div>
+            <input type="text" id="chat-input">
+        </div>
+
+        <div id="leaderboard">
+            <h3 id="t-lead-title">CLASSEMENT</h3>
+            <ol id="rank-list"></ol>
+        </div>
+
+        <div id="admin-btn" style="display:none" onclick="openAdmin()">🔧 Admin</div>
+        <canvas id="game"></canvas>
+    </div>
+
+    <div id="admin-panel" class="overlay" style="display:none">
+        <div class="modal">
+            <h2 id="t-admin-title">ADMIN PANEL</h2>
+            <button onclick="banPlayer()" class="danger">BAN PLAYER</button>
+            <button onclick="closeAdmin()">CLOSE</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
