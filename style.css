@@ -1,38 +1,14 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background: #2c3e50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-canvas {
-    background: #5c94fc;
-    border: 6px solid #ecf0f1;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-#stats {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    color: white;
-    z-index: 10;
-}
-
-#title {
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #f1c40f;
-    margin-bottom: 5px;
-}
-
-#score {
-    font-size: 32px;
-    font-weight: 900;
-    text-shadow: 3px 3px #000;
-}
+body { margin: 0; background: #0f3460; color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+.overlay { position: fixed; inset: 0; background: rgba(15, 52, 96, 0.95); display: flex; justify-content: center; align-items: center; z-index: 100; }
+.modal { background: #16213e; padding: 30px; border-radius: 12px; border: 2px solid #e94560; min-width: 320px; }
+input { display: block; width: 90%; padding: 12px; margin: 10px auto; background: #0f3460; border: 1px solid #533483; color: white; border-radius: 4px; }
+button { background: #e94560; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s; width: 100%; }
+button:hover { background: #ff2e63; }
+.link { font-size: 12px; color: #aaa; cursor: pointer; margin-top: 15px; }
+#lang-switch { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; }
+#lang-switch button { width: auto; padding: 5px 10px; font-size: 10px; }
+#chat-box { position: absolute; bottom: 20px; left: 20px; width: 260px; background: rgba(22, 33, 62, 0.8); padding: 10px; border-radius: 8px; border: 1px solid #533483; }
+#messages { height: 120px; overflow-y: auto; font-size: 13px; margin-bottom: 8px; }
+#leaderboard { position: absolute; top: 20px; right: 20px; background: rgba(22, 33, 62, 0.8); padding: 15px; border-radius: 8px; border: 1px solid #e94560; }
+canvas { display: block; background: #5c94fc; border-bottom: 8px solid #2ecc71; }
+.danger { background: #c0392b; margin-bottom: 10px; }
